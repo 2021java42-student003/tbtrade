@@ -12,6 +12,10 @@
 
 <h3>ログイン画面</h3>
 
+<%if(request.getAttribute("err") != null) { %>
+<%= request.getAttribute("err")%>
+<%} %>
+
 <form action="/tbtrade/SearchServlet" method="post">
 ログインID（メールアドレス）
 <br>
@@ -25,14 +29,14 @@
 </form>
 
 
-<form action="/tbtrade/MemberRegistServlet" method="post">
+<form action="/tbtrade/memberRegist.jsp" method="post">
 初めての方はこちら➡
 <input type="submit" value="新規登録">
 </form>
 
 <br><br>
 
-<form action="/tbtrade/AdminLogin" method="post">
+<form action="/tbtrade/adminLogin.jsp" method="post">
 管理者の方はこちら➡
 <input type="submit" value="管理者ログイン">
 </form>
