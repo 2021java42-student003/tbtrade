@@ -29,7 +29,7 @@
 </form>
 
 <form action="/tbtrade/showBuyCart.jsp" method="post">
-<input type="submit" value="登録情報を変更する">
+<input type="submit" value="カートの中身を見る">
 </form>
 
 <form action="/tbtrade/SearchServlet.jsp" method="post">
