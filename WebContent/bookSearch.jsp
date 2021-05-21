@@ -8,14 +8,12 @@
 </head>
 <body>
 
-<form action="/tbtrade/SearchServlet" method="post">
+<form action="/tbtrade/login.jsp" method="post">
 <input type="submit" value="ログアウト">
-<input type="hidden" name="action" value="logout">
 </form>
 
-<form action="/tbtrade/SearchServlet" method="post">
+<form action="/tbtrade/mypage.jsp" method="post">
 <input type="submit" value="マイページ">
-<input type="hidden" name="action" value="mypage">
 </form>
 
 <form action="/tbtrade/SearchServlet" method="post">
@@ -24,9 +22,8 @@
 <input type="hidden" name="action" value="search">
 </form>
 
-<form action="/tbtrade/SearchServlet" method="post">
+<form action="/tbtrade/showContents.jsp" method="post">
 <input type="submit" value="売却ページ">
-<input type="hidden" name="action" value="sell">
 </form>
 
 </body>
