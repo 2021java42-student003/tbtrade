@@ -10,7 +10,7 @@
 </head>
 <body>
 
-<h2>マイページ</h2>
+<h3>マイページ</h3>
 <c:forEach items="${member}" var="members">
 <tr><td>氏名</td><td>${members.member_name}</td></tr>
 <tr><td>郵便番号</td><td>${members.postal}</td></tr>
