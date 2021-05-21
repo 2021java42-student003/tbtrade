@@ -20,11 +20,11 @@
 <tr><td>パスワード</td><td>${members.password}</td></tr>
 </c:forEach>
 
-<form action="/tbtrade/LogServlet" method="post">
+<form action="/tbtrade/mylog.jsp" method="post">
 <input type="submit" value="取引履歴を見る">
 </form>
 
-<form action="/tbtrade/EditMypageServlet" method="post">
+<form action="/tbtrade/editMypage.jsp" method="post">
 <input type="submit" value="登録情報を変更する">
 </form>
 
@@ -33,7 +33,7 @@
 </form>
 
 <form action="/tbtrade/SearchServlet.jsp" method="post">
-<input type="submit" value="取引履歴を見る">
+<input type="submit" value="検索へ戻る">
 </form>
 
 </body>
