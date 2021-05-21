@@ -11,10 +11,17 @@
 <body>
 
 <h3>取引履歴</h3>
-<c:forEach items="${logs}" var="logs">
-<tr><td>売買判別</td><td>${logs.is_sell}</td><td>取引日</td><td>${logs.datetime}</td><td>タイトル</td><td>${logs.title}</td><td>冊数</td><td>${logs.quantity}</td><td>値段</td><td>${logs.price}</td></tr>
+<table border="1">
+<c:forEach items="${log}" var="logs">
+<tr><td>売買判別</td><td>${logs.is_sell}</td></tr>
+<tr><td>取引日</td><td>${logs.datetime}</td></tr>
+<tr><td>タイトル</td><td>${logs.title}</td></tr>
+<tr><td>冊数</td><td>${logs.quantity}</td></tr>
+<tr><td>値段</td><td>${logs.price}</td></tr>
 </c:forEach>
-
+</table>
+<br>
+<br>
 <form action="/tbtrade/mypage.jsp" method="post">
 <input type="submit" value="マイページに戻る">
 </form>
