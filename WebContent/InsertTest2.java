@@ -17,7 +17,7 @@ class InsertTest2 {
 			String pass = "himitu";
 			// データベースへの接続
 			Connection con = DriverManager.getConnection(url, user, pass);
-			// SQL文の作成
+			// SQL文の作成（テストデータ２）
 			String sql = "INSERT INTO books(book_name, price, author, publisher, publication_date, stock, is_secondhand, under_assessing) VALUES('Javaマスター', 2000, 'リナックスアカデミー', '株式会社リカレント', '2019-10-04 15:25:07', 20, 1, 1)";
 
 			// PreparedStatementオブジェクトの取得

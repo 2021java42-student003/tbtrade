@@ -17,7 +17,7 @@ class InsertTest {
 			String pass = "himitu";
 			// データベースへの接続
 			Connection con = DriverManager.getConnection(url, user, pass);
-			// SQL文の作成
+			// SQL文の作成（テストデータ１）
 			String sql = "INSERT INTO member(member_name, postal, address, tel, mail, password) VALUES ('リカレント太郎', '160-0022', '東京都新宿区新宿3-1-13京王新宿追分ビル4階','09-999-9999', 'recurrent@mail.com', 'recurrent')";
 
 			// PreparedStatementオブジェクトの取得

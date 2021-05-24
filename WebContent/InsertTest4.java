@@ -17,7 +17,7 @@ class InsertTest4 {
 			String pass = "himitu";
 			// データベースへの接続
 			Connection con = DriverManager.getConnection(url, user, pass);
-			// SQL文の作成
+			// SQL文の作成（テストデータ４）
 			String sql = "INSERT INTO admin(admin_name, admin_mail, admin_password) VALUES('管理人A', 'kanri@mail.com', 'kannri')";
 
 			// PreparedStatementオブジェクトの取得

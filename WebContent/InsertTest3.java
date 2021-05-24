@@ -17,7 +17,7 @@ class InsertTest3 {
 			String pass = "himitu";
 			// データベースへの接続
 			Connection con = DriverManager.getConnection(url, user, pass);
-			// SQL文の作成
+			// SQL文の作成（テストデータ３）
 			String sql = "INSERT INTO log(datetime, is_sell, member_id, quantity) VALUES( '2019-10-04 15:25:07', 1, 1, 1)";
 
 			// PreparedStatementオブジェクトの取得
