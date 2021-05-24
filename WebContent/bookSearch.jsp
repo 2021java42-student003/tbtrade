@@ -8,6 +8,8 @@
 </head>
 <body>
 
+<h3>本の検索ページ</h3>
+
 <form action="/tbtrade/login.jsp" method="post">
 <input type="submit" value="ログアウト">
 </form>

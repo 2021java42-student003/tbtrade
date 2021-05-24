@@ -10,6 +10,13 @@
 </head>
 <body>
 
+<form action="/tbtrade/adminTop.jsp" method="post">
+<input type="submit" value="管理者トップへ戻る">
+</form>
+
+<h3>管理者用会員情報詳細画面</h3>
+
+<!-- サーブレットで会員情報の検索結果をスコープに入れておき、ここではEL式で取り出すだけにする -->
 <h3>会員情報詳細</h3>
 <table border="1">
 <c:forEach items="${member}" var="members">
@@ -32,6 +39,12 @@
 <tr><td>値段</td><td>${logs.price}</td></tr>
 </c:forEach>
 </table>
+
+<form action="/tbtrade/searchMember.jsp" method="post">
+<input type="submit" value="会員情報の検索へ戻る"></form>
+
+<form action="tbtrade/EditMemberServlet?action=edit" method="post">
+<input type="submit" value="編集する"></form>
 
 </body>
 </html>

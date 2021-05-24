@@ -25,6 +25,8 @@
 <tr><td>タイトル</td><td><a href= "${adminBook.book_name}" >${adminBook.book_name}</a></td><td></tr>
 <tr><td>著者名</td><td>${adminBook.author}</td><td></tr>
 <tr><td>値段</td><td>${adminBook.price}</td><td></tr>
+<tr><td>本の詳細</td><td><form action="/tbtrade/EditMemberServlet?action=detail" method="post">
+<input type="submit" value="本の詳細"></form></td></tr>
 </c:forEach>
 </table>
 
