@@ -28,7 +28,7 @@
 	<td align="right">${datetime }</td>
 	<td align="right">${publisher}</td>
 <td>
-<form action="/shopping/SellCartServlet?action=delete" method="post">
+<form action="/tbtrade/SellCartServlet?action=delete" method="post">
 	<input type="hidden" name="action" value="delete">
 	<input type="submit" value="削除">
 </form>
@@ -37,7 +37,7 @@
 </c:forEach>
 </table>
 
-<form action="/shopping/SellCartServlet?action=confirm" method="post">
+<form action="/tbtrade/SellCartServlet?action=confirm" method="post">
 	<input type="submit" value="売却確認">
 </form>
 </c:if>
