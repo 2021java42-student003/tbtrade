@@ -15,13 +15,19 @@
 <!-- ここではスコープに入れた変更情報を出力するだけになります。値の名前が違っていたら修正してください -->
 
 <table border="1">
+<tr><td>氏名</td><td>郵便番号</td>
+    <td>住所</td><td>電話番号</td><td>メールアドレス</td><td>パスワード</td></tr>
+
 <c:forEach items="${member}" var="members">
-<tr><td>氏名</td><td>${members.member_name}</td></tr>
-<tr><td>郵便番号</td><td>${members.postal}</td></tr>
-<tr><td>住所</td><td>${members.address}</td></tr>
-<tr><td>電話番号</td><td>${members.tel}</td></tr>
-<tr><td>メールアドレス</td><td>${members.mailaddress}</td></tr>
-<tr><td>パスワード</td><td>${members.password}</td></tr>
+<tr>
+
+<td align="center">${members.member_name}</td>
+	<td align="right">${members.postal}</td>
+	<td align="right">${members.address}</td>
+	<td align="right">${members.tel}</td>
+	<td align="right">${members.mailaddress}</td>
+	<td align="right">${members.password}</td>
+</tr>
 </c:forEach>
 </table>
 
