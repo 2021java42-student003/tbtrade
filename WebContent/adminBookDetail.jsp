@@ -51,6 +51,11 @@
 
 冊
 
+<form action="/tbtrade/EditBookServlet" method="post">
+<input type="submit" value="編集する">
+<input type="hidden" name="action" value="edit">
+</form>
+
 <form action="/tbtrade/BookContentsServlet" method="post">
 <input type="submit" value="カートに入れる">
 <input type="hidden" name="action" value="into">
