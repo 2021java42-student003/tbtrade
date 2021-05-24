@@ -18,7 +18,7 @@
 
 <!-- 可能なら本のタイトルからリンクで詳細に飛べるようにする -->
 検索結果
-（本のタイトルから書籍詳細に飛べます）
+
 <br>
 <table border="1">
 <c:forEach items="${adminBooks}" var="adminBook">

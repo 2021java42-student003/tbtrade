@@ -21,6 +21,7 @@
 <c:forEach items="${members}" var="Member">
 <tr><td>名前</td><td><a href= "${Member.member_name}" >${Member.member_name}</a></td></tr>
 <tr><td>ID</td><td><a href= "${Member.member_id}" >${Member.member_id}</a></td></tr>
+
 </c:forEach>
 </table>
 
