@@ -10,6 +10,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import tbtrade.bean.BookBean;
+import tbtrade.dao.BookDAO;
+import tbtrade.dao.DAOException;
+
 /**
  * Servlet implementation class SearchServlet
  */
@@ -17,16 +21,22 @@ import javax.servlet.http.HttpServletResponse;
 public class BookSearchServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		booksDAO dao = new booksDAO();
-		List<booksBean> list = dao.findAll();
+		try {
+			BookDAO dao = new BookDAO();
+			List<BookBean> list = dao.findAll();
 
-		request.setAttribute("books", list);
-		RequestDispatcher rd = request.getRequestDispatcher("/bookResult.jsp");
-		rd.forward(request, response);
+			request.setAttribute("books", list);
+			RequestDispatcher rd = request.getRequestDispatcher("/bookResult.jsp");
+			rd.forward(request, response);
+		} catch (DAOException e) {
+			e.printStackTrace();
+			request.setAttribute("message", "内部エラーが発生しました。");
+			RequestDispatcher rd = request.getRequestDispatcher("/tbtrade/login.jsp");
+			rd.forward(request,  response);
+		}
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher rd = request.getRequestDispatcher(page);
 		doGet(request, response);
 	}
 }
