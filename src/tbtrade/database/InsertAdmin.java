@@ -39,3 +39,4 @@ class InsertAdmin {
 		}
 	}
 }
+
