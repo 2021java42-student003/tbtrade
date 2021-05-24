@@ -14,6 +14,7 @@
 <input type="submit" value="ログイン画面に戻る">
 </form>
 <br><br><br>
+<h3>${message}</h3>
 
 <form action="/tbtrade/MemberRegistServlet" method="post">
 
@@ -23,10 +24,10 @@
 氏名<input type="text" name="name" value=<%=request.getAttribute("name") %>><br>
 <%} %>
 
-<%if(request.getAttribute("postel") == null){ %>
-郵便番号<input type="text" name="postel"><br>
+<%if(request.getAttribute("postal") == null){ %>
+郵便番号<input type="text" name="postal"><br>
 <%}else{ %>
-郵便番号<input type="text" name="postel" value=<%=request.getAttribute("postel") %>><br>
+郵便番号<input type="text" name="postal" value=<%=request.getAttribute("postal") %>><br>
 <%} %>
 
 <%if(request.getAttribute("address") == null){ %>
