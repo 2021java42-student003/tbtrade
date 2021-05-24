@@ -8,9 +8,8 @@
 </head>
 <body>
 
-<form action="/tbtrade/BookContentsServlet" method="post">
+<form action="/tbtrade/bookSearch.jsp" method="post">
 <input type="submit" value="検索に戻る">
-<input type="hidden" name="action" value="back">
 </form>
 
 <!-- ここはサーブレット内で記入だな -->
