@@ -1,6 +1,7 @@
 package tbtrade.servlet;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -12,16 +13,20 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class SearchServlet
  */
-@WebServlet("/SearchServlet")
-public class SearchServlet extends HttpServlet {
+@WebServlet("/BookSearchServlet")
+public class BookSearchServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		if (action.equals(search)) {
-			String search = request.getParameter("title");
-		}
+
+		booksDAO dao = new booksDAO();
+		List<booksBean> list = dao.findAll();
+
+		request.setAttribute("books", list);
+		RequestDispatcher rd = request.getRequestDispatcher("/bookResult.jsp");
+		rd.forward(request, response);
 	}
 
-	private void gotoPage(HttpServletRequest request, HttpServletResponse response, String page) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		RequestDispatcher rd = request.getRequestDispatcher(page);
-		rd.forward(request, response);
+		doGet(request, response);
 	}
 }
