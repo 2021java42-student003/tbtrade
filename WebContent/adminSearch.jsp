@@ -21,7 +21,7 @@
 <br>
 <br>
  タイトルで検索
-<form action="/tbtrade/adminTop.jsp" method="post">
+<form action="/tbtrade/AdminSearch?action=search" method="post">
 <input type="text" name="title"><br>
 </form>
 <form action="/tbtrade/AdminSearch?action=search" method="post">
