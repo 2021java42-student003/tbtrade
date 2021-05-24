@@ -8,6 +8,8 @@
 </head>
 <body>
 
+管理者用会員検索フォーム
+
 <form action="/tbtrade/adminTop.jsp" method="post">
 <input type="submit" value="管理者トップ">
 </form>

@@ -28,7 +28,7 @@
 
 <br><br><br>
 
-<form action="/tbtrade/memberSearch.jsp" method="post">
+<form action="/tbtrade/searchMember.jsp" method="post">
 <input type="submit" value="会員情報の検索、編集">・・・会員情報の検索、編集
 </form>
 
