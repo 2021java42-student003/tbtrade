@@ -8,6 +8,8 @@
 </head>
 <body>
 
+<!-- いえーい -->
+
 <form action="/tbtrade/bookSearch.jsp" method="post">
 <input type="submit" value="買い物を続ける">
 </form>
