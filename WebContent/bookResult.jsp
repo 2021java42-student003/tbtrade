@@ -1,10 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prex="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Show BookSearch Result</title>
 </head>
 <body>
 
@@ -26,7 +27,11 @@
 		<th>購入</th>
 	</tr>
 
-	<tr>
+	<c:forEach books="${books}" var="books">
+		<tr><td>${book.title}</td><td>${book.author}</td><td>${book.price}</td><td><input type="submit" value="商品ページ"></td></tr>
+	</c:forEach>
+
+	<!-- <tr>
 		<th>タイトル学入門</th>
 		<th>著者太郎</th>
 		<th>5千億兆円</th>
@@ -36,7 +41,7 @@
 			<input type="hidden" name="action" value="detail">
 			</form>
 		</th>
-	</tr>
+	</tr> -->
 </table>
 
 
