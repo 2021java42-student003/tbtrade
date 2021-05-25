@@ -25,6 +25,10 @@ public class BookBean {
 		this.under_assessing = under_assessing;
 	}
 
+	public BookBean() {
+
+	}
+
 	public int getBook_id() {
 		return book_id;
 	}

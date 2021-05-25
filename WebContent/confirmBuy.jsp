@@ -10,7 +10,9 @@
 
 <h3>注文確認</h3>
 
-<!-- includeでカート表示のほうがいいかも -->
+<jsp:include page="/showBuyCart.jsp"/>
+
+<!-- includeでカート表示のほうがいいかも
 
 <table border=1>
 	<tr>
@@ -44,6 +46,8 @@
 </table>
 
 合計金額<br>
+
+-->
 
 <form action="/tbtrade/BuyServlet" method="post">
 			<input type="submit" value="注文確定">

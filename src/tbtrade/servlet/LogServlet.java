@@ -10,9 +10,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import la.bean.LogBean;
-import la.dao.DAOException;
-import la.dao.LogDAO;
+import tbtrade.bean.LogBean;
+import tbtrade.dao.DAOException;
+import tbtrade.dao.LogDAO;
 
 /**
  * Servlet implementation class LogServlet

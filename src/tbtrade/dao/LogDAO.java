@@ -8,8 +8,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import la.bean.LogBean;
-import la.dao.DAOException;
+import tbtrade.bean.LogBean;
 
 public class LogDAO {
 	private Connection con;
@@ -27,12 +26,12 @@ public class LogDAO {
 		try {
 			// 表に入力したデータを入れたい(売買用テーブルlogに入れる)
 
-		String sql = "SELECT * FROM log2 WHERE member_id = ? ORDER BY datetime DESC";
+		String sql = "SELECT * FROM log WHERE member_id = ? ORDER BY datetime DESC";
 
 		// PrepraredStatementオブジェクトの取得
 			st = con.prepareStatement(sql);
-			String mail = null;
-			st.setString(1, mail);
+			int mail = 1;
+			st.setInt(1, mail);
 
 		// SQLの実行
 			rs = st.executeQuery();
