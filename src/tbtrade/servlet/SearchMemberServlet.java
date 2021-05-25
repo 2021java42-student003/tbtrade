@@ -10,9 +10,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import la.bean.BookBean;
-import la.dao.BookDAO;
 import la.dao.DAOException;
+import la.dao.MemberDAO;
+import tbtrade.bean.BookBean;
 
 @WebServlet("/SearchMemberServlet")
 public class SearchMemberServlet extends HttpServlet {
@@ -25,14 +25,14 @@ public class SearchMemberServlet extends HttpServlet {
 
 		try {
 			// モデルのDAOを生成
-			BookDAO dao = new BookDAO();
+			MemberDAO dao = new MemberDAO();
 			// パラメータなしの場合は全レコード表示
 			if (action == null || action.length() == 0) {
 				List<BookBean> list = dao.findAll();
 				// リストをリクエストスコープに入れてJSPへフォワードする
 				// itemsはJSPに合わせて変える
-				request.setAttribute("logs", list);
-				gotoPage(request, response, "");
+				request.setAttribute("Member", list);
+				gotoPage(request, response, "resultMember.jsp");
 			}
 		} catch (DAOException e) {
 			e.printStackTrace();

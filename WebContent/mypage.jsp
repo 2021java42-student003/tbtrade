@@ -20,7 +20,7 @@
 <tr><td>パスワード</td><td>${members.password}</td></tr>
 </c:forEach>
 
-<form action="/tbtrade/mylog.jsp" method="post">
+<form action="/tbtrade/LogServlet" method="post">
 <input type="submit" value="取引履歴を見る">
 </form>
 

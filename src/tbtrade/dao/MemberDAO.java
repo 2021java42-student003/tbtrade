@@ -1,4 +1,4 @@
-package la.dao;
+package tbtrade.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -8,25 +8,25 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import la.bean.LogBean;
+import tbtrade.bean.MemberBean;
 
-public class LogDAO {
+public class MemberDAO {
 	private Connection con;
 
-	public LogDAO() throws DAOException{
+	public MemberDAO() throws DAOException{
 		getConnection();
 	}
 
-	public List<LogBean> findAll() throws DAOException{
+	public List<MemberBean> findAll() throws DAOException{
 		if(con == null)
 			getConnection();
 
 		PreparedStatement st = null;
 		ResultSet rs = null;
 		try {
-			// 表に入力したデータを入れたい(売買用テーブルlog2に入れる)
+			// 表に入力したデータを入れたい(売買用テーブルlogに入れる)
 
-		String sql = "SELECT * FROM log2 ORDER BY datetime DESC";
+		String sql = "SELECT * FROM member ORDER BY member_id ";
 
 		// PrepraredStatementオブジェクトの取得
 			st = con.prepareStatement(sql);
@@ -34,13 +34,16 @@ public class LogDAO {
 		// SQLの実行
 			rs = st.executeQuery();
 		// 結果の取得
-		List<LogBean> list = new ArrayList<LogBean>();
+		List<MemberBean> list = new ArrayList<MemberBean>();
 		while (rs.next()) {
-			String datetime = rs.getString("datetime");
-			String book_name = rs.getString("book_name");
-			int price = rs.getInt("price");
-			int quantity = rs.getInt("quantity");
-			LogBean bean = new LogBean(datetime, book_name, price, quantity);
+			String member_name = rs.getString("member_id");
+			String postal = rs.getString("postal");
+			String address = rs.getString("address");
+			String tel = rs.getString("tel");
+			String mail= rs.getString("mail");
+			String password = rs.getString("password");
+
+			MemberBean bean = new MemberBean(member_name, postal, address, tel, mail, password);
 			list.add(bean);
 		}
 		// 取引履歴一覧をListとして返す
@@ -83,3 +86,5 @@ public class LogDAO {
 		}
 
 	}
+
+

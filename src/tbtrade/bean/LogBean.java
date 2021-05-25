@@ -1,14 +1,16 @@
-package la.bean;
+package tbtrade.bean;
 
 import java.io.Serializable;
 
 public class LogBean implements Serializable{
+	private int is_sell;
 	private String datetime;
 	private String book_name;
 	private int price;
 	private int quantity;
 
-	public LogBean(String datetime, String book_name, int price, int quantity) {
+	public LogBean(int is_sell, String datetime, String book_name, int price, int quantity) {
+		this.is_sell = is_sell;
 		this.datetime = datetime;
 		this.book_name = book_name;
 		this.price = price;
@@ -17,6 +19,14 @@ public class LogBean implements Serializable{
 
 	public LogBean() {
 
+	}
+
+	public int getIs_sell() {
+		return is_sell;
+	}
+
+	public void setIs_sell(int is_sell) {
+		this.is_sell = is_sell;
 	}
 
 	public String getDatetime() {
