@@ -23,10 +23,10 @@
 
 <c:forEach items="${cart.sellbooks }" var="item">
 <tr>
-	<td align="center">${name}</td>
-	<td align="right">${author}</td>
-	<td align="right">${datetime }</td>
-	<td align="right">${publisher}</td>
+	<td align="center">${item.name}</td>
+	<td align="right">${item.author}</td>
+	<td align="right">${item.datetime }</td>
+	<td align="right">${item.publisher}</td>
 <td>
 <form action="/tbtrade/SellCartServlet?action=delete" method="post">
 	<input type="hidden" name="action" value="delete">

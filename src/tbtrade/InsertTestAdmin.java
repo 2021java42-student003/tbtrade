@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-class InsertTest4 {
+class InsertTestAdmin {
 	public static void main(String[] args) {
 
 		try {
@@ -17,7 +17,7 @@ class InsertTest4 {
 			String pass = "himitu";
 			// データベースへの接続
 			Connection con = DriverManager.getConnection(url, user, pass);
-			// SQL文の作成（テストデータ４）
+			// SQL文の作成
 			String sql = "INSERT INTO admin(admin_name, admin_mail, admin_password) VALUES('管理人A', 'kanri@mail.com', 'kannri')";
 
 			// PreparedStatementオブジェクトの取得
