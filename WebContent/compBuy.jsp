@@ -18,7 +18,6 @@
 		<input type="submit" value="ログアウト">
 	</form>
 
-
 </head>
 <body>
 
