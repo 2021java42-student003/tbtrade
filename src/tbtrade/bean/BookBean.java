@@ -1,6 +1,5 @@
 package tbtrade.bean;
 
-import java.io.Serializable;
 import java.util.Date;
 
 public class BookBean {
@@ -24,6 +23,10 @@ public class BookBean {
 		this.stock = stock;
 		this.is_secondhand = is_secondhand;
 		this.under_assessing = under_assessing;
+	}
+
+	public BookBean() {
+
 	}
 
 	public int getBook_id() {

@@ -27,8 +27,8 @@
 		<th>購入</th>
 	</tr>
 
-	<c:forEach books="${books}" var="books">
-		<tr><td>${book.title}</td><td>${book.author}</td><td>${book.price}</td><td><input type="submit" value="商品ページ"></td></tr>
+	<c:forEach items="${books}" var="book">
+		<tr><td>${book.book_name}</td><td>${book.author}</td><td>${book.price}</td><td><input type="submit" value="商品ページ"></td></tr>
 	</c:forEach>
 
 	<!-- <tr>

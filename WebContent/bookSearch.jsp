@@ -18,11 +18,13 @@
 <input type="submit" value="マイページ">
 </form>
 
-<form action="/tbtrade/SearchServlet" method="post">
+<form action="/tbtrade/BookSearchServlet" method="post">
 <input type="text"  name="title" placeholder="タイトルを入力してください">
 <input type="submit" value="検索">
 <input type="hidden" name="action" value="search">
 </form>
+
+<a href="/tbtrade/BookServlet>">全検索</a>
 
 <form action="/tbtrade/showContents.jsp" method="post">
 <input type="submit" value="売却ページ">
