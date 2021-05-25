@@ -20,11 +20,31 @@ import la.dao.LogDAO;
 @WebServlet("/LogServlet")
 public class LogServlet extends HttpServlet {
 
+	//protected void doGet(HttpServletRequest request, HttpServletResponse response){
+		//  String value = "XxxValue";
+		  // 第2引数は(Stringに限らず)任意のオブジェクトを設定可能
+		  //session.setAttribute("XxxKeyString", value);
+	//	}
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		request.setCharacterEncoding("UTF-8");
 		// パラメータの解析
 		String action = request.getParameter("action");
+
+		/*
+		//セッションからのデータの取得
+
+		HttpSession session = request.getSession(false);
+		AccountBeans ab = new AccountBeans();
+
+		ab = session.getAttribute("account");
+		String mail = ab.getMail();
+		//String mail = (String)session.getAttribute("ab.mail");
+	 	*/
+
+		// まだログインサーブレットがないので一時的にメアドを指定
+		String mail ="recurrent@mail.com";
 
 		try{
 			// モデルのDAOを生成
@@ -40,7 +60,7 @@ public class LogServlet extends HttpServlet {
 		} catch (DAOException e) {
 			e.printStackTrace();
 			request.setAttribute("message", "内部エラーが発生しました");
-			RequestDispatcher rd = request.getRequestDispatcher("/showItem.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("/mylog.jsp");
 			rd.forward(request, response);
 		}
 	}

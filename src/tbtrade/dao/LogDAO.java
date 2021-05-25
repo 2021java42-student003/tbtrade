@@ -1,4 +1,4 @@
-package la.dao;
+package tbtrade.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import la.bean.LogBean;
+import la.dao.DAOException;
 
 public class LogDAO {
 	private Connection con;
@@ -24,23 +25,26 @@ public class LogDAO {
 		PreparedStatement st = null;
 		ResultSet rs = null;
 		try {
-			// 表に入力したデータを入れたい(売買用テーブルlog2に入れる)
+			// 表に入力したデータを入れたい(売買用テーブルlogに入れる)
 
-		String sql = "SELECT * FROM log2 ORDER BY datetime DESC";
+		String sql = "SELECT * FROM log2 WHERE member_id = ? ORDER BY datetime DESC";
 
 		// PrepraredStatementオブジェクトの取得
 			st = con.prepareStatement(sql);
+			String mail = null;
+			st.setString(1, mail);
 
 		// SQLの実行
 			rs = st.executeQuery();
 		// 結果の取得
 		List<LogBean> list = new ArrayList<LogBean>();
 		while (rs.next()) {
+			int is_sell = rs.getInt("is_sell");
 			String datetime = rs.getString("datetime");
 			String book_name = rs.getString("book_name");
 			int price = rs.getInt("price");
 			int quantity = rs.getInt("quantity");
-			LogBean bean = new LogBean(datetime, book_name, price, quantity);
+			LogBean bean = new LogBean(is_sell, datetime, book_name, price, quantity);
 			list.add(bean);
 		}
 		// 取引履歴一覧をListとして返す
@@ -65,8 +69,8 @@ public class LogDAO {
 				// JDBCドライバの登録
 				Class.forName("org.postgresql.Driver");
 				// URL、ユーザー名、パスワードの設定
-				String url = "jdbc:postgresql:sample";
-				String user = "student";
+				String url = "jdbc:postgresql:tbtrade";
+				String user = "postgres";
 				String pass = "himitu";
 				// データベースの接続
 				con = DriverManager.getConnection(url, user, pass);
@@ -83,3 +87,4 @@ public class LogDAO {
 		}
 
 	}
+

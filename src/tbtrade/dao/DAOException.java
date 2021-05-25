@@ -1,4 +1,4 @@
-package la.dao;
+package tbtrade.dao;
 
 public class DAOException extends Exception {
 
